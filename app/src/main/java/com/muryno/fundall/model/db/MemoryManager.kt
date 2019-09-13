@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 import com.google.gson.Gson
 import com.muryno.fundall.model.db.entity.User
 import com.muryno.fundall.utils.MainApplication
-import com.muryno.fundall.view.LoginActivity
+import com.muryno.fundall.view.LoginActivityStep
 
 class MemoryManager() {
 
@@ -52,7 +52,7 @@ class MemoryManager() {
 
     fun signOut() {
         editor?.clear()?.apply()
-        val intent = Intent(MainApplication.getInstance().applicationContext, LoginActivity::class.java)
+        val intent = Intent(MainApplication.getInstance().applicationContext, LoginActivityStep::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         MainApplication.getInstance().startActivity(intent)
     }

@@ -1,9 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.LoginActivity">
+    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/logo" />
+
+            <TextView
+                android:layout_below="@id/iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/iv"
+                android:gravity="center"
+                android:layout_marginEnd="6dp"
+                android:layout_gravity="bottom|end"
+                android:fontFamily="@font/mavenpro_black"
+                android:text="Fundall"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mavenpro_black"
+            android:textColor="@color/black"
+            android:text="Welcome Back!" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:text="Sign in to continue" />
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:drawablePadding="20dp"
+            android:drawableLeft="@drawable/ic_message"
+            android:layout_width="match_parent"
+            android:textSize="13sp"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
+            android:hint="email"
+            android:inputType="number"
+            android:paddingBottom="2dp"
+            android:paddingLeft="8dp"
+            android:layout_marginBottom="20dp"
+            android:paddingRight="8dp"
+            android:paddingTop="2dp"
+            app:met_baseColor="@color/black"
+            />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:drawablePadding="20dp"
+            android:drawableLeft="@drawable/ic_lock"
+            android:id="@+id/edt_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:textSize="13sp"
+            android:inputType="textPassword"
+            android:paddingBottom="2dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="2dp"
+            android:layout_marginBottom="30dp"
+
+            app:met_baseColor="@color/black"
+            app:passwordToggleEnabled="true" />
+
+        <com.dx.dxloadingbutton.lib.LoadingButton
+            android:id="@+id/btn_login"
+            android:layout_gravity="center"
+            android:layout_width="250dp"
+            android:layout_height="46dp"
+            app:lb_btnColor="@color/colorAccent"
+            app:lb_resetAfterFailed="true"
+
+            app:lb_rippleEnable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            app:lb_btnText="Login "
+            android:layout_marginBottom="20dp"
+
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:id="@+id/lay_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New here? "
+                    android:textSize="13sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Create Account"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/mavenpro_black"
+                    />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forget password "
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="13sp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

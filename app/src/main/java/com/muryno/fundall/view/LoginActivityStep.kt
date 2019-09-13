@@ -4,18 +4,26 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.muryno.fundall.R
-import java.util.*
-import kotlin.concurrent.schedule
+import kotlinx.android.synthetic.main.activity_login_step.*
 
-class SplashActivity : AppCompatActivity() {
+class LoginActivityStep : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        setContentView(R.layout.activity_login_step)
 
-        Timer().schedule(1000){
 
+
+
+
+        lay_3.setOnClickListener {
             startActivity(Intent(applicationContext,RegistrationActivity::class.java))
+
+        }
+
+        login.setOnClickListener {
+            startActivity(Intent(applicationContext,LoginActivity::class.java))
+
         }
     }
 }

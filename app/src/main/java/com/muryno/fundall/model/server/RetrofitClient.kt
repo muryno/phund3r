@@ -1,13 +1,10 @@
-package com.muryno.community.server
+package com.muryno.fundall.model.server
 
 import com.muryno.community.db.MemoryManager
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.io.IOException
 
 class RetrofitClient{
 
@@ -25,10 +22,11 @@ class RetrofitClient{
         }
         authorization = if (MemoryManager().getUser() != null) MemoryManager().getUser()?.authorization else ""
 
+        val Bearer = "Bearer "
         val client = OkHttpClient.Builder().addInterceptor { chain ->
             val newRequest = chain.request().newBuilder()
                 .addHeader("Content-Type", "application/json")
-                    .addHeader("API_TOKEN", authorization)
+                    .addHeader("Authorization", "$Bearer  $authorization" )
                     .build()
             chain.proceed(newRequest)
         }.addInterceptor(interceptor).build()

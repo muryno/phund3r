@@ -3,7 +3,7 @@ package com.muryno.fundall.utils
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
-import com.muryno.community.ui.interfaces.IImageCompressionTaskListener
+import com.muryno.fundall.controller.IImageCompressionTaskListener
 import java.io.File
 import java.io.IOException
 import java.util.ArrayList
@@ -17,10 +17,10 @@ class ImageCompressionTask: Runnable {
     private var mContext: Context? = null
     private val compressed = ArrayList<File>()
 
-    constructor( context: Context,
-        taskListener: IImageCompressionTaskListener,
-                 source: List<String>,
-        id: Int
+    constructor(context: Context,
+                taskListener: IImageCompressionTaskListener,
+                source: List<String>,
+                id: Int
     ) {
 
         mContext = context

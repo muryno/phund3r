@@ -17,6 +17,6 @@ class Infor {
 
     @SerializedName("user")
     @Expose
-    var success: User? = null
+    var user: User? = null
 
 }
