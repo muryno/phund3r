@@ -71,17 +71,13 @@
             app:met_baseColor="@color/black"
             />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true"
-            app:startIconDrawable="@drawable/ic_lock"
-            app:passwordToggleTint="@color/ef_grey">
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/l_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawablePadding="20dp"
+            android:drawableLeft="@drawable/ic_lock"
             android:hint="Password"
             android:textSize="13sp"
             android:inputType="textPassword"
@@ -93,7 +89,6 @@
 
             app:met_baseColor="@color/black"
             app:passwordToggleEnabled="true" />
-        </com.google.android.material.textfield.TextInputLayout>
 
         <com.dx.dxloadingbutton.lib.LoadingButton
             android:id="@+id/btn_login"

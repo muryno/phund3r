@@ -91,8 +91,10 @@ class ProfileActivity : BaseActivity(), profileView {
 
     override fun loadingSuccessful(msg: String?) {
         msg?.let { toastSuccess(it) }
+
         updateUI()
 
+        llProgressBar.visibility = View.GONE
 
     }
 }

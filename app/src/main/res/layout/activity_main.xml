@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,6 +9,9 @@
     tools:context=".view.MainActivity">
 
 
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <ImageView
         android:id="@+id/lay_2"
         android:layout_width="match_parent"
@@ -66,7 +70,7 @@
             android:layout_height="wrap_content"
             android:text="87689683289 GTB"
             android:textColor="@color/white"
-           />
+            />
     </LinearLayout>
 
 
@@ -163,7 +167,7 @@
         app:cardBackgroundColor="@color/dark"
         app:background="@drawable/curve_card"
         app:layout_constraintBottom_toBottomOf="parent"
-       >
+        >
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -238,9 +242,29 @@
                         />
                 </LinearLayout>
             </LinearLayout>
+
+
         </FrameLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.muryno.fundall.utils.BottomSheetLayout
+        android:id="@+id/bottom_sheet_layout"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+
+
+        android:layout_marginEnd="16dp"
+        android:background="@color/white"
+        app:collapsedHeight="220dp">
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/layout_recycler_item" />
+    </com.muryno.fundall.utils.BottomSheetLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

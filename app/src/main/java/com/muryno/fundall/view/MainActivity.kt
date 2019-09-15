@@ -1,16 +1,17 @@
 package com.muryno.fundall.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.muryno.fundall.R
 import com.muryno.fundall.model.base.BaseActivity
 import com.muryno.fundall.model.db.MemoryManager
+import com.muryno.fundall.utils.BottomSheetLayout
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.profileImage
-import kotlinx.android.synthetic.main.activity_profile.*
+
 
 class MainActivity : BaseActivity() {
 
@@ -24,7 +25,7 @@ class MainActivity : BaseActivity() {
         }
 
         logout.setOnClickListener {
-            MemoryManager().getInstance()?.signOut()
+            signout()
         }
 
         val user = MemoryManager().getUser()
@@ -34,5 +35,39 @@ class MainActivity : BaseActivity() {
             .centerCrop()
             .error(mDefaultBackground).into(profileImage)
 
+
+        val layout = findViewById<View>(R.id.bottom_sheet_layout) as BottomSheetLayout
+
+        layout.toggle()
+        layout.collapse()
+        layout.isExpended()
+        layout.setCornerRadius(28f)
+
     }
+
+    fun signout(){
+        val builder = AlertDialog.Builder(this@MainActivity)
+
+        // Set the alert dialog title
+        builder.setTitle("Sign out")
+
+        builder.setMessage("Are you sure you want to sign out?")
+
+        builder.setPositiveButton("YES"){dialog, which ->
+            MemoryManager().getInstance()?.signOut()
+
+        }
+        builder.setNegativeButton("No"){dialog,which ->dialog.dismiss()
+        }
+
+        // Finally, make the alert dialog using builder
+        val dialog: AlertDialog = builder.create()
+
+        // Display the alert dialog on app interface
+        dialog.show()
+    }
+
+
+
+
 }
