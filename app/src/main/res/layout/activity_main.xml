@@ -154,12 +154,14 @@
             />
     </LinearLayout>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginStart="4dp"
-        android:background="@drawable/curve_card"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:cardCornerRadius="26dp"
+        app:cardBackgroundColor="@color/dark"
+        app:background="@drawable/curve_card"
         app:layout_constraintBottom_toBottomOf="parent"
        >
         <FrameLayout
@@ -177,11 +179,12 @@
                     android:orientation="horizontal"
                     android:layout_marginBottom="10dp"
                     android:layout_height="wrap_content">
-                    <ImageView
+                    <ImageButton
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginEnd="10dp"
-                        android:src="@drawable/whitejcard"/>
+                        android:background="@drawable/whitejcard"
+                        android:src="@drawable/ic_plane"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -197,11 +200,12 @@
                     android:orientation="horizontal"
                     android:layout_marginBottom="10dp"
                     android:layout_height="wrap_content">
-                    <ImageView
+                    <ImageButton
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginEnd="10dp"
-                        android:src="@drawable/whitejcard"/>
+                        android:background="@drawable/whitejcard"
+                        android:src="@drawable/ic_diamond"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -217,11 +221,12 @@
                     android:orientation="horizontal"
                     android:layout_marginBottom="10dp"
                     android:layout_height="wrap_content">
-                    <ImageView
+                    <ImageButton
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginEnd="10dp"
-                        android:src="@drawable/whitejcard"/>
+                        android:background="@drawable/whitejcard"
+                        android:src="@drawable/ic_trophy"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -235,7 +240,7 @@
             </LinearLayout>
         </FrameLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

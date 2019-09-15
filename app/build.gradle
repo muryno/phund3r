@@ -45,17 +45,14 @@ dependencies {
 
     implementation 'com.github.StevenDXC:DxLoadingButton:2.3'
 
+    implementation 'com.google.android.material:material:1.0.0'
+
     implementation 'com.google.android.material:material:1.1.0-alpha10'
     implementation 'androidx.multidex:multidex:2.0.1'
 
 
     implementation 'com.github.esafirm.android-image-picker:imagepicker:2.1.0'
 
-    implementation "androidx.room:room-runtime:2.2.0-rc01"
-    kapt "androidx.room:room-compiler:2.2.0-rc01"
-    kapt 'androidx.room:room-compiler:2.1.0'
-    implementation "androidx.room:room-ktx:2.2.0-rc01"
-    implementation "androidx.room:room-rxjava2:2.2.0-rc01"
 
 
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'

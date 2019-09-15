@@ -19,7 +19,7 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
 
         profileImage.setOnClickListener {
-            startActivity(Intent(applicationContext,MainActivity::class.java))
+            startActivity(Intent(applicationContext,ProfileActivity::class.java))
 
         }
 
