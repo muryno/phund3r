@@ -1,4 +1,4 @@
-package com.muryno.community.ui.interfaces
+package com.muryno.fundall
 
 import java.io.File
 

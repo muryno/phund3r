@@ -61,6 +61,12 @@ class RegistrationActivity : BaseActivity(), RegView {
             presenter?.validate(f_name.text.toString(),l_name.text.toString(),e_mail.text.toString(),password.text.toString(),c_password.text.toString())
         }
 
-        log_in.setOnClickListener { Intent(applicationContext,LoginActivityStep::class.java) }
+        log_in.setOnClickListener {
+         startActivity(Intent(applicationContext,LoginActivityStep::class.java))
+
+
+        }
+
+
     }
 }

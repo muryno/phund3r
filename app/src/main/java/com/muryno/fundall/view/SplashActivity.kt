@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.muryno.fundall.R
+import com.muryno.fundall.model.db.MemoryManager
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -15,7 +16,9 @@ class SplashActivity : AppCompatActivity() {
 
         Timer().schedule(1000){
 
-            startActivity(Intent(applicationContext,RegistrationActivity::class.java))
+            startActivity(Intent(applicationContext, LoginActivityStep::class.java))
+            finish()
+
         }
     }
 }

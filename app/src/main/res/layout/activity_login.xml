@@ -34,7 +34,7 @@
                 android:layout_marginEnd="6dp"
                 android:layout_gravity="bottom|end"
                 android:fontFamily="@font/mavenpro_black"
-                android:text="Fundall"/>
+                android:text="fundall"/>
         </RelativeLayout>
 
         <TextView
@@ -54,6 +54,7 @@
 
 
         <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/e_mail"
             android:drawablePadding="20dp"
             android:drawableLeft="@drawable/ic_message"
             android:layout_width="match_parent"
@@ -61,7 +62,7 @@
             android:layout_marginTop="30dp"
             android:layout_height="wrap_content"
             android:hint="email"
-            android:inputType="number"
+            android:inputType="textEmailAddress"
             android:paddingBottom="2dp"
             android:paddingLeft="8dp"
             android:layout_marginBottom="20dp"
@@ -70,10 +71,15 @@
             app:met_baseColor="@color/black"
             />
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            app:startIconDrawable="@drawable/ic_lock"
+            app:passwordToggleTint="@color/ef_grey">
+
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:drawablePadding="20dp"
-            android:drawableLeft="@drawable/ic_lock"
-            android:id="@+id/edt_login_password"
+            android:id="@+id/l_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -87,6 +93,7 @@
 
             app:met_baseColor="@color/black"
             app:passwordToggleEnabled="true" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.dx.dxloadingbutton.lib.LoadingButton
             android:id="@+id/btn_login"

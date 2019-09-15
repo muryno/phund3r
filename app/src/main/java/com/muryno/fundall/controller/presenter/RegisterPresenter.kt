@@ -4,6 +4,7 @@ import android.util.Patterns
 import com.muryno.fundall.controller.view.RegView
 import com.muryno.fundall.model.db.BaseData
 import com.muryno.fundall.model.db.entity.Base
+import com.muryno.fundall.model.db.entity.Infor
 import com.muryno.fundall.model.server.RetrofitClient
 import com.muryno.fundall.utils.Debug
 import retrofit2.Call
@@ -52,21 +53,25 @@ class RegisterPresenter(var callback: RegView) {
             return
         }
 
-        RetrofitClient().getApi().signup(fname,lname,email,confirm_pass,password).enqueue(object :Callback<BaseData<Base>>{
-            override fun onFailure(call: Call<BaseData<Base>>, t: Throwable) {
+        RetrofitClient().getApi().signup(fname,lname,email,confirm_pass,password).enqueue(object :Callback<BaseData<Infor>>{
+            override fun onFailure(call: Call<BaseData<Infor>>, t: Throwable) {
                 Debug.Log(t.message!!)
                 callback.loadingFailed("Connection failed.. please try again!!")            }
 
             override fun onResponse(
-                call: Call<BaseData<Base>>,
-                response: Response<BaseData<Base>>
+                call: Call<BaseData<Infor>>,
+                response: Response<BaseData<Infor>>
             ) {
-                val data = response.body()?.data as Base
+                try {
 
-                if(response.body()!=null && data.error ==null){
-                    callback.loadingSuccessful(data.success?.message)
-                }else{
-                    callback.loadingFailed(data.error?.message)
+                    if (response.body() != null && response.body()?.error == null) {
+                        callback.loadingSuccessful(response.body()?.success?.message)
+                    } else {
+                        callback.loadingFailed(response.body()?.error?.message)
+
+                    }
+                }catch (e : Exception){
+                    callback.loadingFailed("Network problem....")
 
                 }
             }

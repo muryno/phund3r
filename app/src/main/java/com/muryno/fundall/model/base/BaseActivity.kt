@@ -13,6 +13,8 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
+import com.esafirm.imagepicker.features.ImagePicker
+import com.esafirm.imagepicker.features.ReturnMode
 import com.google.android.material.snackbar.Snackbar
 import com.muryno.fundall.utils.hideKeyboard
 import com.muryno.fundall.utils.isOnline
@@ -93,7 +95,16 @@ abstract class BaseActivity: AppCompatActivity() {
     }
 
 
-
+    fun imagePicker(title: String) {
+        ImagePicker.create(this)
+            .returnMode(ReturnMode.ALL) // set whether pick and / or camera action should return immediate result or not.
+            .toolbarImageTitle(title) // image selection title
+            .single() // single mode
+            .showCamera(true) // show camera or not (true by default)
+            .imageDirectory("Camera") // directory name for captured image  ("Camera" folder by default)
+            .theme(R.style.AppTheme_NoActionBar)
+            .start()
+    }
 
     private fun registerInternetCheckReceiver() {
         val internetFilter = IntentFilter()

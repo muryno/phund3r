@@ -1,6 +1,6 @@
 package com.muryno.fundall.model.server
 
-import com.muryno.community.db.MemoryManager
+import com.muryno.fundall.model.db.MemoryManager
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

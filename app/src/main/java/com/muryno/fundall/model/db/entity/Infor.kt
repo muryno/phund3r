@@ -19,4 +19,8 @@ class Infor {
     @Expose
     var user: User? = null
 
+    @SerializedName("data")
+    @Expose
+    var data: User? = null
+
 }

@@ -4,6 +4,6 @@ import java.io.File
 
 interface profileView : BaseView
 {
-    fun upload(file: File)
+//    fun upload(file: File)
 
 }

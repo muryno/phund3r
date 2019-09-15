@@ -1,4 +1,4 @@
-package com.muryno.community.db
+package com.muryno.fundall.model.db
 
 import android.content.Intent
 import android.content.SharedPreferences
@@ -10,7 +10,7 @@ import com.muryno.fundall.view.LoginActivityStep
 class MemoryManager() {
 
 
-    private var sInstance:MemoryManager?=null
+    private var sInstance: MemoryManager?=null
     private  var mSharedPreferences: SharedPreferences
     private var editor: SharedPreferences.Editor? = null
     private val PREF_NAME = "fintech_user_app"

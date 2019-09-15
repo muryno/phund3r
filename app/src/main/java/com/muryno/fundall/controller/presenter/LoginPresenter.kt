@@ -1,10 +1,11 @@
 package com.muryno.fundall.controller.presenter
 
 import android.util.Patterns
-import com.muryno.community.db.MemoryManager
+import com.muryno.fundall.model.db.MemoryManager
 import com.muryno.fundall.controller.view.LoginView
 import com.muryno.fundall.model.db.BaseData
 import com.muryno.fundall.model.db.entity.Base
+import com.muryno.fundall.model.db.entity.Infor
 import com.muryno.fundall.model.server.RetrofitClient
 import com.muryno.fundall.utils.Debug
 import retrofit2.Call
@@ -30,25 +31,33 @@ class LoginPresenter(private var callback: LoginView?) {
         }
 
 
-        RetrofitClient().getApi().login(email,password).enqueue(object :Callback<BaseData<Base>>{
-            override fun onFailure(call: Call<BaseData<Base>>, t: Throwable) {
+        RetrofitClient().getApi().login(email,password).enqueue(object :Callback<BaseData<Infor>>{
+            override fun onFailure(call: Call<BaseData<Infor>>, t: Throwable) {
                 Debug.Log(t.message!!)
                 callback?.loadingFailed("Connection failed.. please try again!!")
             }
 
             override fun onResponse(
-                call: Call<BaseData<Base>>,
-                response: Response<BaseData<Base>>
+                call: Call<BaseData<Infor>>,
+                response: Response<BaseData<Infor>>
             ) {
-                val data = response.body()?.data as Base
 
-                if(response.body()!=null && data.error ==null){
-                    MemoryManager().putUser(data.success?.user)
-                    callback?.loadingSuccessful(data.success?.message)
-                }else{
-                    callback?.loadingFailed(data.error?.message)
+
+                try {
+
+                    if (response.body() != null && response.body()?.error == null) {
+                        MemoryManager().getInstance()?.putUser(response.body()?.success?.user)
+
+                        callback?.loadingSuccessful(response.body()?.success?.message)
+                    } else {
+                        callback?.loadingFailed(response.body()?.error?.message)
+
+                    }
+                }catch (e : Exception){
+                    callback?.loadingFailed("Network problem....")
 
                 }
+
             }
 
         })
