@@ -11,6 +11,7 @@ import com.muryno.fundall.model.base.BaseActivity
 import com.muryno.fundall.model.db.MemoryManager
 import com.muryno.fundall.utils.BottomSheetLayout
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.layout_recycler_item.*
 
 
 class MainActivity : BaseActivity() {
@@ -35,6 +36,14 @@ class MainActivity : BaseActivity() {
             .centerCrop()
             .error(mDefaultBackground).into(profileImage)
 
+
+        card_1.setOnClickListener {
+            toastSuccess("still under development mode")
+        }
+
+        card_2.setOnClickListener {
+            toastSuccess("keep calm!!")
+        }
 
         val layout = findViewById<View>(R.id.bottom_sheet_layout) as BottomSheetLayout
 
