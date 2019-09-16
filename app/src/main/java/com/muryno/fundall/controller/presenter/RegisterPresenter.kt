@@ -3,6 +3,7 @@ package com.muryno.fundall.controller.presenter
 import android.util.Patterns
 import com.muryno.fundall.controller.view.RegView
 import com.muryno.fundall.model.db.BaseData
+import com.muryno.fundall.model.db.MemoryManager
 import com.muryno.fundall.model.db.entity.Base
 import com.muryno.fundall.model.db.entity.Infor
 import com.muryno.fundall.model.server.RetrofitClient
@@ -63,11 +64,16 @@ class RegisterPresenter(var callback: RegView) {
                 response: Response<BaseData<Infor>>
             ) {
                 try {
+                    if (response.body() != null ){
+                        if (response.body()?.error == null) {
 
-                    if (response.body() != null && response.body()?.error == null) {
-                        callback.loadingSuccessful(response.body()?.success?.message)
-                    } else {
-                        callback.loadingFailed(response.body()?.error?.message)
+                            callback?.loadingSuccessful(response.body()?.success?.message)
+                        } else {
+                            callback?.loadingFailed(response.body()?.error?.message)
+
+                        }
+                    }else{
+                        callback.loadingFailed("Network problem....")
 
                     }
                 }catch (e : Exception){

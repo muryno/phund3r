@@ -45,13 +45,14 @@ class LoginPresenter(private var callback: LoginView?) {
 
                 try {
 
-                    if (response.body() != null && response.body()?.error == null) {
+                    if (response.body() != null ){
+                        if (response.body()?.error == null) {
                         MemoryManager().getInstance()?.putUser(response.body()?.success?.user)
 
-                        callback?.loadingSuccessful(response.body()?.success?.message)
-                    } else {
-                        callback?.loadingFailed(response.body()?.error?.message)
-
+                        callback?.loadingSuccessful(response.body()?.success?.message) } else {
+                        callback?.loadingFailed(response.body()?.error?.message) }
+                    }else{
+                        callback?.loadingFailed("Network problem....")
                     }
                 }catch (e : Exception){
                     callback?.loadingFailed("Network problem....")
