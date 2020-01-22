@@ -173,75 +173,95 @@
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
                 android:orientation="vertical"
-                android:layout_gravity="center_horizontal">
+                android:layout_height="wrap_content">
+
+                <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:paddingBottom="15dp"
+                    android:paddingTop="24dp"
+                    app:shimmer_demo_angle="20"
+                    app:shimmer_demo_child_count="10"
+                    app:shimmer_demo_grid_child_count="2"
+                    app:shimmer_demo_layout="@layout/layout_mainui"
+                    app:shimmer_demo_layout_manager_type="linear_horizontal" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"
-                    android:layout_height="wrap_content">
-                    <ImageButton
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/whitejcard"
-                        android:src="@drawable/ic_plane"/>
-                    <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:textSize="12sp"
-                        android:text="Request for new life style"
-                        android:textAlignment="center"
-                        android:textColor="@color/white"
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"
-                    android:layout_height="wrap_content">
-                    <ImageButton
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/whitejcard"
-                        android:src="@drawable/ic_diamond"/>
-                    <TextView
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="wrap_content">
+                        <ImageButton
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/whitejcard"
+                            android:src="@drawable/ic_plane"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="12sp"
+                            android:text="Request for new life style"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Add other cards"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:textColor="@color/white"
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"
-                    android:layout_height="wrap_content">
-                    <ImageButton
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/whitejcard"
-                        android:src="@drawable/ic_trophy"/>
-                    <TextView
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="wrap_content">
+                        <ImageButton
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/whitejcard"
+                            android:src="@drawable/ic_diamond"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Add other cards"
+                            android:textAlignment="center"
+                            android:textSize="12sp"
+                            android:textColor="@color/white"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        android:layout_gravity="center"
-                        android:text="Manage card settings"
-                        android:textAlignment="center"
-                        android:textColor="@color/white"
-                        />
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="wrap_content">
+                        <ImageButton
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/whitejcard"
+                            android:src="@drawable/ic_trophy"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:layout_gravity="center"
+                            android:text="Manage card settings"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
+
 
 
         </FrameLayout>
@@ -259,7 +279,7 @@
 
         android:layout_marginEnd="16dp"
         android:background="@color/white"
-        app:collapsedHeight="220dp">
+        app:collapsedHeight="50dp">
 
         <include
             android:layout_width="match_parent"

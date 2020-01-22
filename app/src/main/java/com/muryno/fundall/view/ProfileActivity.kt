@@ -63,18 +63,18 @@ class ProfileActivity : BaseActivity(), profileView {
 
     fun updateUI(){
         val user = MemoryManager().getUser()
-
-
-        val mDefaultBackground = ContextCompat.getDrawable(applicationContext, R.drawable.profile)
-        Glide.with(applicationContext)
-            .load(user?.avatar)
-            .centerCrop()
-            .error(mDefaultBackground).into(profileImage)
-
-        fr_name.text = user?.firstname
-        ls_name.text = user?.lastname
-        e_email.text = user?.email
-        target.text = user?.monthly_target
+//
+//
+//        val mDefaultBackground = ContextCompat.getDrawable(applicationContext, R.drawable.profile)
+//        Glide.with(applicationContext)
+//            .load(user?.avatar)
+//            .centerCrop()
+//            .error(mDefaultBackground).into(profileImage)
+//
+//        fr_name.text = user?.firstname
+//        ls_name.text = user?.lastname
+//        e_email.text = user?.email
+//        target.text = user?.monthly_target
 
     }
 

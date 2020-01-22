@@ -49,6 +49,9 @@ class LoginActivity : BaseActivity(), LoginView {
 
         btn_login.setOnClickListener {
             presenter?.validate(e_mail.text.toString(),l_password.text.toString())
+
+            startActivity(Intent(applicationContext,ProfileActivity::class.java))
+            finish()
         }
 
         lay_2.setOnClickListener {
